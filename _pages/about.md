@@ -28,6 +28,7 @@ latest_posts:
 Principal Systems Engineer and Technical Program Manager with expertise in systems engineering, program management, and technical execution. Currently leading \$5M+ programs at Collins Aerospace, specializing in Model-Based Systems Engineering (MBSE), modular open systems (SOSA™/VPX), and autonomous platforms.
 
 **Key Strengths:**
+
 - **Systems Engineering & Architecture**: MBSE (Cameo Systems Modeler), requirements traceability, system design
 - **Program Management**: Budget oversight, cost control, schedule management, cross-functional team leadership
 - **Technical Leadership**: Leading teams of engineers and software developers, vendor management, contractual execution

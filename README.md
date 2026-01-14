@@ -9,6 +9,7 @@ This website showcases professional experience, technical skills, and background
 ## Local Development
 
 ### Prerequisites
+
 - Ruby 2.7+
 - Jekyll
 - Bundler
@@ -112,6 +113,7 @@ This website is built on top of the Jekyll framework and uses a custom theme.
 <a href="https://syanyong.github.io/" target="_blank">★</a>
 <a href="https://jucheval.github.io/" target="_blank">★</a>
 <a href="https://j1yoo.github.io/" target="_blank">★</a>
+
 </td>
 </tr>
 <tr>
