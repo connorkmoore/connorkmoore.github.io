@@ -10,15 +10,17 @@ This website showcases professional experience, technical skills, and background
 
 ### Prerequisites
 
-- Ruby 2.7+
-- Jekyll
+- Ruby 3.4+
+- Jekyll 4.4+
 - Bundler
+- Node.js (for JavaScript tools)
 
 ### Setup
 
 ```bash
 bundle install
-bundle exec jekyll serve
+npm install
+bundle exec jekyll serve --livereload
 ```
 
 The site will be available at `http://localhost:4000`
@@ -31,23 +33,7 @@ bundle exec jekyll build
 
 ## License
 
-This website is built on top of the Jekyll framework and uses a custom theme.
-
-<a href="https://varuniyer.info/" target="_blank">★</a>
-<a href="https://yukimasano.github.io/" target="_blank">★</a>
-<a href="https://hashe037.github.io/" target="_blank">★</a>
-<a href="https://wang-boyu.github.io/" target="_blank">★</a>
-<a href="https://qingqingchen.info" target="_blank">★</a>
-<a href="https://bajinsheng.github.io/" target="_blank">★</a>
-<a href="https://www.silviofanzon.com/" target="_blank">★</a>
-<a href="https://kaikaiyao.github.io/" target="_blank">★</a>
-<a href="https://alchemz.github.io/" target="_blank">★</a>
-<a href="https://samadamday.com/" target="_blank">★</a>
-<a href="https://fanpu.io/" target="_blank">★</a>
-<a href="https://abigalekim.github.io/" target="_blank">★</a>
-<a href="https://lucasresck.github.io/" target="_blank">★</a>
-<a href="https://users.wpi.edu/~lfichera/" target="_blank">★</a>
-<a href="https://anmspro.github.io/" target="_blank">★</a>
+This website uses the Jekyll framework with a custom theme.
 <a href="https://berlyne.net/" target="_blank">★</a>
 <a href="https://filippomazzoli.github.io/" target="_blank">★</a>
 <a href="https://www.escontrela.me/" target="_blank">★</a>

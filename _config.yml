@@ -213,7 +213,7 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
-  - jekyll-jupyter-notebook
+  # - jekyll-jupyter-notebook  # disabled: requires jupyter
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
@@ -362,7 +362,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # disabling due to Windows compatibility issues
   widths:
     - 480
     - 800
