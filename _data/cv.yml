@@ -2,96 +2,91 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Connor Kenneth Moore
+    - name: Location
+      value: Cedar Rapids, IA
+    - name: Phone
+      value: 419-356-5170
+    - name: Email
+      value: ConnorKennethMoore@gmail.com
+    - name: LinkedIn
+      value: <a href="https://www.linkedin.com/in/connor-kenneth-moore" target="_blank">connor-kenneth-moore</a>
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Masters of Business Administration (MBA)
+      institution: University of Iowa, Iowa City, IA
+      year: 2020 - 2023
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - Business Analytics Focus
+    - title: Bachelor of Science in Industrial Engineering
+      institution: Purdue University, West Lafayette, IN
+      year: 2015 - 2019
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Technical Program Manager - Principal Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2025 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Lead technical execution for $5M+ labor program
+        - Utilize MBSE (Cameo Systems Modeler) to architect modular open systems (SOSA™/VPX)
+        - Enforce funding strategy separating internal vs. program funding aligned with FAR Part 12
+        - Pioneered "Prime-as-Architect" model reducing timeline by 6 months
+        - Negotiated firm-fixed-price SOWs to mitigate R&D risk while maintaining <5% cost variance
+        - Reduced operational cost by 50% through manufacturing site optimization
+
+    - title: Technical Program Manager - Senior Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2022 - 2025
       description:
-        - Description 1.
-        - Description 2.
+        - Secured $12M in contracts over 2 years from NATO, Taiwan, and US Armed Forces
+        - Led cross-functional team of 5 Systems Engineers and 4 Software Squads (C#)
+        - Delivered two mission-critical releases with MIL-STD environmental qualification
+        - Automated qualification test events using Python
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Integration Lead - Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2019 - 2022
       description:
+        - Provided on-site integration support for 12+ international military platforms
+        - Resolved complex RF and waveform configuration issues
+        - Maintained USML/EAR export compliance
+        - Developed core manufacturing expertise (X-Ray, AOI, flying probe testing)
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
+- title: Technical Skills
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Hardware & Standards
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - SOSA™ / VPX Architecture
+        - Model-Based Systems Engineering (MBSE)
+        - FAR Part 12 Commercial Contracting
+        - ITAR / EAR Export Controls
+        - RF Systems
+        - MIL-STD Environmental Testing
+    - title: Tools & Frameworks
       items:
-        - Description 1.
-        - Description 2.
+        - Cameo Systems Modeler (MBSE)
+        - JIRA / Agile
+        - MS Project
+        - SAP
+        - Power BI
+        - DOORS Requirements Management
+        - Git / VS Code
+    - title: Technical Literacy
+      items:
+        - Python (Automation & Analytics)
+        - SQL (Data Analytics)
+        - C# (Software Development)
+        - HTML/CSS
+        - Linux
 
-- title: Other Interests
+- title: Security & Certifications
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <strong>Active U.S. Secret Security Clearance</strong>
+    - Manufacturing Process expertise (X-Ray, AOI, Flying Probe, Environmental Testing)
+    - Subject Matter Expert in export classification (USML/EAR)
