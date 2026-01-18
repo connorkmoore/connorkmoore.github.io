@@ -1,6 +1,6 @@
 # this file contains the social media links and usernames of the author
 
-cv_pdf: /assets/pdf/resume.pdf # path to your resume PDF file
+cv_pdf: /assets/pdf/main.pdf # path to your resume PDF file
 email: ConnorKennethMoore@gmail.com # your email address
 github_username: connorkmoore # your GitHub user name
 linkedin_username: connor-kenneth-moore # your LinkedIn user name

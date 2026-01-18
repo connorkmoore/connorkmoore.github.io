@@ -18,7 +18,7 @@ nav_order: 4
     --card-bg-dark: rgba(255,255,255,0.06);
     --card-border-light: rgba(0,0,0,0.08);
     --card-border-dark: rgba(255,255,255,0.15);
-    --card-bg: var(--card-bg-light);
+    --card-bg: rgba(255, 255, 255, 0.8);
     --board-bg: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.08) 0, rgba(255,255,255,0) 25%),
                  radial-gradient(circle at 90% 10%, rgba(255,255,255,0.07) 0, rgba(255,255,255,0) 22%),
                  #f7f2e9;
@@ -67,21 +67,29 @@ nav_order: 4
   
   .sticky-note {
     background: var(--note-yellow);
-    padding: 14px 16px;
+    padding: 14px 16px 8px 16px;
     border-radius: 8px 8px 10px 10px;
     box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-    min-height: 110px;
+    min-height: 90px;
     position: absolute;
     color: #111;
     font-family: inherit;
     transform: rotate(var(--rotation)) scale(var(--scale, 1));
     transition: transform 0.18s ease, box-shadow 0.18s ease, padding 0.18s ease;
-    cursor: pointer;
+    cursor: grab;
     overflow-wrap: break-word;
     width: 160px;
     left: var(--pos-x);
     top: var(--pos-y);
-    padding: calc(14px * var(--scale, 1)) calc(16px * var(--scale, 1));
+    padding: calc(14px * var(--scale, 1)) calc(16px * var(--scale, 1)) calc(8px * var(--scale, 1)) calc(16px * var(--scale, 1));
+    user-select: none;
+  }
+
+  .sticky-note.dragging {
+    cursor: grabbing;
+    opacity: 0.8;
+    z-index: 1000;
+    transition: none;
   }
 
   .sticky-note::before {
@@ -98,7 +106,7 @@ nav_order: 4
   .sticky-note:hover {
     transform: rotate(0deg) scale(calc(1.04 * var(--scale, 1)));
     box-shadow: 0 16px 32px rgba(0,0,0,0.25);
-    z-index: 10;
+    z-index: 1000 !important;
   }
   
   .sticky-note.blue { background: var(--note-blue-pale); }
@@ -107,11 +115,11 @@ nav_order: 4
   .sticky-note.purple::before { background: var(--note-purple-accent); }
   
   .sticky-note.upvoted {
-    padding: calc(18px * var(--scale, 1)) calc(16px * var(--scale, 1)) calc(14px * var(--scale, 1)) calc(16px * var(--scale, 1));
+    padding: calc(18px * var(--scale, 1)) calc(16px * var(--scale, 1)) calc(8px * var(--scale, 1)) calc(16px * var(--scale, 1));
   }
   
   .sticky-note.downvoted {
-    padding: calc(10px * var(--scale, 1)) calc(16px * var(--scale, 1)) calc(14px * var(--scale, 1)) calc(16px * var(--scale, 1));
+    padding: calc(10px * var(--scale, 1)) calc(16px * var(--scale, 1)) calc(8px * var(--scale, 1)) calc(16px * var(--scale, 1));
   }
   
   .note-content {
@@ -124,7 +132,7 @@ nav_order: 4
     font-size: calc(12px * var(--scale, 1));
     font-style: italic;
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-align: right;
     opacity: 0.75;
     color: #222;
@@ -135,29 +143,38 @@ nav_order: 4
     gap: calc(6px * var(--scale, 1));
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 4px;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    font-size: calc(10px * var(--scale, 1));
+  }
+  
+  .sticky-note:hover .note-votes {
+    opacity: 0.5;
   }
   
   .vote-btn {
-    background: rgba(0,0,0,0.08);
+    background: none;
     border: none;
-    border-radius: 4px;
-    width: calc(28px * var(--scale, 1));
-    height: calc(24px * var(--scale, 1));
     cursor: pointer;
-    font-size: calc(14px * var(--scale, 1));
-    transition: background 0.16s ease;
+    font-size: calc(10px * var(--scale, 1));
+    padding: 0;
+    width: auto;
+    height: auto;
     color: #111;
+    opacity: 1;
+    transition: transform 0.12s ease;
   }
   
   .vote-btn:hover {
-    background: rgba(0,0,0,0.16);
+    transform: scale(1.2);
   }
   
   .vote-count {
-    font-size: calc(12px * var(--scale, 1));
+    font-size: calc(10px * var(--scale, 1));
     font-weight: 600;
     color: #222;
+    opacity: 0.8;
   }
   
   .delete-note {
@@ -294,14 +311,16 @@ nav_order: 4
       --board-bg: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.04) 0, rgba(255,255,255,0) 25%),
                    radial-gradient(circle at 90% 10%, rgba(255,255,255,0.03) 0, rgba(255,255,255,0) 22%),
                    #1d1b1a;
-      --card-bg: var(--card-bg-dark);
+      --card-bg: #000000;
     }
     .bulletin-board { box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
     .sticky-note { box-shadow: 0 12px 28px rgba(0,0,0,0.4); }
     .sticky-note, .sticky-note .note-content, .sticky-note .note-author { color: #111 !important; }
-    .modal-content { border-color: var(--card-border-dark); }
+    .modal-content { background: #000000 !important; color: #ffffff !important; border-color: var(--card-border-dark) !important; }
+    .modal-content h2 { color: #ffffff !important; }
+    .form-group label { color: #f1f1f1 !important; }
     .form-group textarea,
-    .form-group input { background: #1f1f1f; color: #f1f1f1; border-color: rgba(255,255,255,0.08); }
+    .form-group input { background: #1f1f1f !important; color: #f1f1f1 !important; border-color: rgba(255,255,255,0.08) !important; }
     .delete-note { background: rgba(0,0,0,0.35); color: #eee; }
   }
 </style>
@@ -340,7 +359,7 @@ nav_order: 4
 <!-- Firebase -->
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-  import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, orderBy, query, updateDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+  import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, orderBy, query, updateDoc, getDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
   // Firebase configuration
   const firebaseConfig = {
@@ -365,6 +384,7 @@ nav_order: 4
   window.deleteDoc = deleteDoc;
   window.doc = doc;
   window.updateDoc = updateDoc;
+  window.getDoc = getDoc;
   
   // Load notes in real-time
   const positionCache = {}; // Cache generated positions for stable rendering
@@ -400,16 +420,22 @@ nav_order: 4
         posY = positionCache[docSnapshot.id].y;
       }
       
-      noteDiv.style.setProperty('--rotation', `${(Math.random() - 0.5) * 7}deg`);
+      // Use stored rotation or use a consistent value
+      const rotation = note.rotation !== undefined ? note.rotation : (Math.random() - 0.5) * 7;
+      noteDiv.style.setProperty('--rotation', `${rotation}deg`);
       noteDiv.style.setProperty('--pos-x', `${posX}%`);
       noteDiv.style.setProperty('--pos-y', `${posY}%`);
       noteDiv.style.setProperty('--scale', scale);
       
+      // Set z-index based on votes (higher votes = higher z-index)
+      const zIndex = 100 + netVotes;
+      noteDiv.style.zIndex = zIndex;
+      
       if (netVotes > 0) noteDiv.classList.add('upvoted');
       if (netVotes < 0) noteDiv.classList.add('downvoted');
       
-      const extraHeight = Math.min(120, Math.max(0, (note.text || '').length * 0.35));
-      noteDiv.style.minHeight = `${110 + extraHeight}px`;
+      const extraHeight = Math.min(100, Math.max(0, (note.text || '').length * 0.25));
+      noteDiv.style.minHeight = `${85 + extraHeight}px`;
       
       // Get user ID from localStorage (generate if needed)
       const userId = getUserId();
@@ -420,11 +446,15 @@ nav_order: 4
         <div class="note-content">${escapeHtml(note.text)}</div>
         <div class="note-author">- ${escapeHtml(note.author || 'Anonymous')}</div>
         <div class="note-votes">
-          <button class="vote-btn ${userVote === 1 ? 'voted-up' : ''}" onclick="event.stopPropagation(); voteNote('${docSnapshot.id}', 1)">👍</button>
+          <button class="vote-btn ${userVote === 1 ? 'voted-up' : ''}" onclick="event.stopPropagation(); voteNote('${docSnapshot.id}', 1)">▲</button>
           <span class="vote-count">${netVotes > 0 ? '+' : ''}${netVotes}</span>
-          <button class="vote-btn ${userVote === -1 ? 'voted-down' : ''}" onclick="event.stopPropagation(); voteNote('${docSnapshot.id}', -1)">👎</button>
+          <button class="vote-btn ${userVote === -1 ? 'voted-down' : ''}" onclick="event.stopPropagation(); voteNote('${docSnapshot.id}', -1)">▼</button>
         </div>
       `;
+      
+      // Make note draggable
+      makeDraggable(noteDiv, docSnapshot.id);
+      
       container.appendChild(noteDiv);
     });
   });
@@ -439,6 +469,37 @@ nav_order: 4
 <script>
   let selectedColor = 'yellow';
   
+  // Apply dark mode styles based on site's theme toggle
+  function applyDarkModeStyles() {
+    const themeSetting = document.documentElement.getAttribute('data-theme-setting') || localStorage.getItem('theme');
+    const isDarkMode = themeSetting === 'dark' || 
+                       (themeSetting !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    const modalContent = document.querySelector('.modal-content');
+    const labels = document.querySelectorAll('.form-group label');
+    const inputs = document.querySelectorAll('.form-group textarea, .form-group input');
+    
+    if (isDarkMode) {
+      if (modalContent) {
+        modalContent.style.backgroundColor = '#000000';
+        modalContent.style.color = '#ffffff';
+      }
+      labels.forEach(label => label.style.color = '#f1f1f1');
+      inputs.forEach(input => {
+        input.style.backgroundColor = '#1f1f1f';
+        input.style.color = '#f1f1f1';
+        input.style.borderColor = 'rgba(255,255,255,0.08)';
+      });
+    }
+  }
+  
+  // Apply on page load and when modal opens
+  document.addEventListener('DOMContentLoaded', applyDarkModeStyles);
+  
+  // Listen for theme changes
+  const observer = new MutationObserver(applyDarkModeStyles);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme-setting'] });
+  
   // Color picker
   document.querySelectorAll('.color-option').forEach(option => {
     option.addEventListener('click', function() {
@@ -450,6 +511,7 @@ nav_order: 4
   
   // Modal functions
   function openModal() {
+    applyDarkModeStyles(); // Reapply styles when modal opens
     document.getElementById('noteModal').style.display = 'block';
   }
   
@@ -467,6 +529,75 @@ nav_order: 4
     }
   }
   
+  // Make a note draggable
+  function makeDraggable(element, noteId) {
+    let isDragging = false;
+    let startX, startY, initialLeft, initialTop;
+    
+    element.addEventListener('mousedown', function(e) {
+      // Don't drag if clicking on buttons or vote controls
+      if (e.target.closest('.delete-note') || e.target.closest('.vote-btn')) {
+        return;
+      }
+      
+      isDragging = true;
+      element.classList.add('dragging');
+      
+      const rect = element.getBoundingClientRect();
+      const boardRect = document.querySelector('.bulletin-board').getBoundingClientRect();
+      
+      startX = e.clientX;
+      startY = e.clientY;
+      initialLeft = ((rect.left - boardRect.left) / boardRect.width) * 100;
+      initialTop = ((rect.top - boardRect.top) / boardRect.height) * 100;
+      
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      
+      const boardRect = document.querySelector('.bulletin-board').getBoundingClientRect();
+      const deltaX = ((e.clientX - startX) / boardRect.width) * 100;
+      const deltaY = ((e.clientY - startY) / boardRect.height) * 100;
+      
+      let newLeft = initialLeft + deltaX;
+      let newTop = initialTop + deltaY;
+      
+      // Clamp to board bounds (leave some margin)
+      newLeft = Math.max(0, Math.min(75, newLeft));
+      newTop = Math.max(0, Math.min(75, newTop));
+      
+      element.style.setProperty('--pos-x', `${newLeft}%`);
+      element.style.setProperty('--pos-y', `${newTop}%`);
+    });
+    
+    document.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      
+      isDragging = false;
+      element.classList.remove('dragging');
+      
+      // Update position in Firebase
+      const posX = parseFloat(element.style.getPropertyValue('--pos-x'));
+      const posY = parseFloat(element.style.getPropertyValue('--pos-y'));
+      updateNotePosition(noteId, posX, posY);
+    });
+  }
+  
+  // Update note position in Firebase
+  async function updateNotePosition(noteId, posX, posY) {
+    try {
+      const noteRef = window.doc(window.db, 'notes', noteId);
+      await window.updateDoc(noteRef, { 
+        posX: posX, 
+        posY: posY 
+      });
+    } catch (error) {
+      console.error('Error updating note position:', error);
+    }
+  }
+
   // Track click position
   let clickX = 0, clickY = 0;
   document.querySelector('.bulletin-board').addEventListener('click', function(e) {
@@ -499,6 +630,7 @@ nav_order: 4
         timestamp: new Date(),
         posX: clickX,
         posY: clickY,
+        rotation: (Math.random() - 0.5) * 7,
         votes: {}
       });
       closeModal();
@@ -532,28 +664,26 @@ nav_order: 4
     return userId;
   }
   
-  // Vote on a note (limit 3 votes per note per user)
+  // Vote on a note (allow up to ±3 votes per note per user)
   async function voteNote(noteId, direction) {
     const userId = getUserId();
     const voteKey = `vote-${noteId}-${userId}`;
-    const voteHistory = JSON.parse(localStorage.getItem(voteKey) || '0');
     
-    // Check vote limit (max 3 votes per note per user)
-    const voteCount = Math.abs(voteHistory) || 0;
-    if (voteCount >= 3 && voteHistory === direction) {
-      alert('You\'ve reached the voting limit for this note!');
-      return;
-    }
+    const currentVote = parseInt(localStorage.getItem(voteKey) || '0');
     
-    // Toggle or change vote
-    let newVote = direction;
-    if (voteHistory === direction) {
-      newVote = 0; // Unvote
-    }
+    // Determine new vote
+    let newVote = currentVote + direction;
+    
+    // Clamp to ±3
+    if (newVote > 3) newVote = 3;
+    if (newVote < -3) newVote = -3;
     
     try {
       const noteRef = window.doc(window.db, 'notes', noteId);
-      const votes = JSON.parse(localStorage.getItem(`votes-${noteId}`) || '{}');
+      
+      // Get current votes from Firestore
+      const noteSnap = await window.getDoc(noteRef);
+      const votes = noteSnap.exists() ? (noteSnap.data().votes || {}) : {};
       
       // Update vote
       if (newVote === 0) {
@@ -562,11 +692,11 @@ nav_order: 4
         votes[userId] = newVote;
       }
       
+      // Update Firestore
       await window.updateDoc(noteRef, { votes });
       
-      // Track in localStorage
-      const newCount = voteCount + (newVote === 0 ? -1 : 1);
-      localStorage.setItem(voteKey, String(newCount) * (newVote > 0 ? 1 : -1));
+      // Track user's vote in localStorage
+      localStorage.setItem(voteKey, String(newVote));
     } catch (error) {
       console.error('Error voting:', error);
       alert('Error voting. Please try again.');

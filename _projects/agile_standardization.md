@@ -2,7 +2,7 @@
 layout: page
 title: Agile Standardization
 description: Linking JIRA burn-down velocity to SAP time-charging and customer commitments
-img: 
+img:
 importance: 1
 category: work
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Home Lab & AI Prototyping
 description: Virtualized home lab with pan-tilt AI object detection system
-img: 
+img:
 importance: 3
 category: fun
 ---

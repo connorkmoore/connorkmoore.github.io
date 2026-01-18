@@ -2,7 +2,7 @@
 layout: page
 title: Test Robustness Improvement
 description: Software-driven recovery tool reducing product returns by 51%
-img: 
+img:
 importance: 2
 category: work
 ---

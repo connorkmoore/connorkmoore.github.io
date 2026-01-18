@@ -119,27 +119,13 @@
       "name": "Tools & Frameworks",
       "level": "Advanced",
       "icon": "fa-solid fa-tools",
-      "keywords": [
-        "Cameo Systems Modeler (MBSE)",
-        "JIRA / Agile",
-        "MS Project",
-        "SAP",
-        "Power BI",
-        "DOORS Requirements Management",
-        "Git / VS Code"
-      ]
+      "keywords": ["Cameo Systems Modeler (MBSE)", "JIRA / Agile", "MS Project", "SAP", "Power BI", "DOORS Requirements Management", "Git / VS Code"]
     },
     {
       "name": "Technical Literacy",
       "level": "Proficient",
       "icon": "fa-solid fa-code",
-      "keywords": [
-        "Python (Automation & Analytics)",
-        "SQL (Data Analytics)",
-        "C# (Software Development)",
-        "HTML/CSS",
-        "Linux"
-      ]
+      "keywords": ["Python (Automation & Analytics)", "SQL (Data Analytics)", "C# (Software Development)", "HTML/CSS", "Linux"]
     }
   ],
   "languages": [
@@ -147,6 +133,15 @@
       "language": "English",
       "fluency": "Native speaker",
       "icon": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Engineer of the Year",
+      "date": "2023",
+      "awarder": "Collins Aerospace",
+      "url": "",
+      "summary": ""
     }
   ],
   "interests": [],
