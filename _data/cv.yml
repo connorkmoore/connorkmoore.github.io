@@ -1,0 +1,99 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Connor Kenneth Moore
+    - name: Location
+      value: Cedar Rapids, IA
+    - name: Phone
+      value: 419-356-5170
+    - name: Email
+      value: ConnorKennethMoore@gmail.com
+    - name: LinkedIn
+      value: <a href="https://www.linkedin.com/in/connor-kenneth-moore" target="_blank">connor-kenneth-moore</a>
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Masters of Business Administration (MBA)
+      institution: University of Iowa, Iowa City, IA
+      year: 2020 - 2023
+      description:
+        - Business Analytics Focus
+    - title: Bachelor of Science in Industrial Engineering
+      institution: Purdue University, West Lafayette, IN
+      year: 2015 - 2019
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Technical Program Manager - Principal Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2025 - Present
+      description:
+        - Lead technical execution for $5M+ labor program
+        - Utilize MBSE (Cameo Systems Modeler) to architect modular open systems (SOSA™/VPX)
+        - Enforce funding strategy separating internal vs. program funding aligned with FAR Part 12
+        - Pioneered "Prime-as-Architect" model reducing timeline by 6 months
+        - Negotiated firm-fixed-price SOWs to mitigate R&D risk while maintaining <5% cost variance
+        - Reduced operational cost by 50% through manufacturing site optimization
+
+    - title: Technical Program Manager - Senior Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2022 - 2025
+      description:
+        - Secured $12M in contracts over 2 years from NATO, Taiwan, and US Armed Forces
+        - Led cross-functional team of 5 Systems Engineers and 4 Software Squads (C#)
+        - Delivered two mission-critical releases with MIL-STD environmental qualification
+        - Automated qualification test events using Python
+
+    - title: Integration Lead - Systems Engineer
+      institution: Collins Aerospace, Cedar Rapids, IA
+      year: 2019 - 2022
+      description:
+        - Provided on-site integration support for 12+ international military platforms
+        - Resolved complex RF and waveform configuration issues
+        - Maintained USML/EAR export compliance
+        - Developed core manufacturing expertise (X-Ray, AOI, flying probe testing)
+
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Hardware & Standards
+      items:
+        - SOSA™ / VPX Architecture
+        - Model-Based Systems Engineering (MBSE)
+        - FAR Part 12 Commercial Contracting
+        - ITAR / EAR Export Controls
+        - RF Systems
+        - MIL-STD Environmental Testing
+    - title: Tools & Frameworks
+      items:
+        - Cameo Systems Modeler (MBSE)
+        - JIRA / Agile
+        - MS Project
+        - SAP
+        - Power BI
+        - DOORS Requirements Management
+        - Git / VS Code
+    - title: Technical Literacy
+      items:
+        - Python (Automation & Analytics)
+        - SQL (Data Analytics)
+        - C# (Software Development)
+        - HTML/CSS
+        - Linux
+
+- title: Security & Certifications
+  type: list
+  contents:
+    - <strong>Active U.S. Secret Security Clearance</strong>
+    - Manufacturing Process expertise (X-Ray, AOI, Flying Probe, Environmental Testing)
+    - Subject Matter Expert in export classification (USML/EAR)
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2023
+      title: Engineer of the Year
+      institution: Collins Aerospace

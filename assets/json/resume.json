@@ -1,0 +1,150 @@
+{
+  "basics": {
+    "name": "Connor Kenneth Moore",
+    "label": "Technical Program Manager",
+    "image": "",
+    "email": "ConnorKennethMoore@gmail.com",
+    "phone": "419-356-5170",
+    "url": "https://www.linkedin.com/in/connor-kenneth-moore",
+    "summary": "Technical Program Manager with expertise in Model-Based Systems Engineering (MBSE), VPX/SOSA architecture, and cross-functional team leadership",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Cedar Rapids",
+      "countryCode": "US",
+      "region": "Iowa"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "connor-kenneth-moore",
+        "url": "https://www.linkedin.com/in/connor-kenneth-moore"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Collins Aerospace",
+      "position": "Technical Program Manager - Principal Systems Engineer",
+      "url": "",
+      "startDate": "2025-01-01",
+      "endDate": "",
+      "summary": "Lead technical execution for $5M+ labor program utilizing MBSE and modular open systems architecture.",
+      "highlights": [
+        "Lead technical execution for $5M+ labor program",
+        "Utilize MBSE (Cameo Systems Modeler) to architect modular open systems (SOSA™/VPX)",
+        "Enforce funding strategy separating internal vs. program funding aligned with FAR Part 12",
+        "Pioneered 'Prime-as-Architect' model reducing timeline by 6 months",
+        "Negotiated firm-fixed-price SOWs to mitigate R&D risk while maintaining <5% cost variance",
+        "Reduced operational cost by 50% through manufacturing site optimization"
+      ]
+    },
+    {
+      "name": "Collins Aerospace",
+      "position": "Technical Program Manager - Senior Systems Engineer",
+      "url": "",
+      "startDate": "2022-01-01",
+      "endDate": "2025-01-01",
+      "summary": "Secured $12M in contracts and led cross-functional engineering teams for mission-critical defense systems.",
+      "highlights": [
+        "Secured $12M in contracts over 2 years from NATO, Taiwan, and US Armed Forces",
+        "Led cross-functional team of 5 Systems Engineers and 4 Software Squads (C#)",
+        "Delivered two mission-critical releases with MIL-STD environmental qualification",
+        "Automated qualification test events using Python"
+      ]
+    },
+    {
+      "name": "Collins Aerospace",
+      "position": "Integration Lead - Systems Engineer",
+      "url": "",
+      "startDate": "2019-01-01",
+      "endDate": "2022-01-01",
+      "summary": "Provided on-site integration support for international military platforms with focus on RF systems and export compliance.",
+      "highlights": [
+        "Provided on-site integration support for 12+ international military platforms",
+        "Resolved complex RF and waveform configuration issues",
+        "Maintained USML/EAR export compliance",
+        "Developed core manufacturing expertise (X-Ray, AOI, flying probe testing)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Iowa",
+      "location": "Iowa City, IA",
+      "url": "",
+      "area": "Business Analytics",
+      "studyType": "MBA",
+      "startDate": "2020-01-01",
+      "endDate": "2023-01-01",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Purdue University",
+      "location": "West Lafayette, IN",
+      "url": "",
+      "area": "Industrial Engineering",
+      "studyType": "Bachelor of Science",
+      "startDate": "2015-01-01",
+      "endDate": "2019-01-01",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Active U.S. Secret Security Clearance",
+      "date": "",
+      "issuer": "U.S. Government",
+      "url": "",
+      "icon": "fa-solid fa-shield"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Hardware & Standards",
+      "level": "Expert",
+      "icon": "fa-solid fa-microchip",
+      "keywords": [
+        "SOSA™ / VPX Architecture",
+        "Model-Based Systems Engineering (MBSE)",
+        "FAR Part 12 Commercial Contracting",
+        "ITAR / EAR Export Controls",
+        "RF Systems",
+        "MIL-STD Environmental Testing"
+      ]
+    },
+    {
+      "name": "Tools & Frameworks",
+      "level": "Advanced",
+      "icon": "fa-solid fa-tools",
+      "keywords": ["Cameo Systems Modeler (MBSE)", "JIRA / Agile", "MS Project", "SAP", "Power BI", "DOORS Requirements Management", "Git / VS Code"]
+    },
+    {
+      "name": "Technical Literacy",
+      "level": "Proficient",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Python (Automation & Analytics)", "SQL (Data Analytics)", "C# (Software Development)", "HTML/CSS", "Linux"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker",
+      "icon": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "Engineer of the Year",
+      "date": "2023",
+      "awarder": "Collins Aerospace",
+      "url": "",
+      "summary": ""
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": []
+}

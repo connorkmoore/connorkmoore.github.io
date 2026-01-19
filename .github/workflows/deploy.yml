@@ -1,0 +1,62 @@
+name: Deploy site
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2" # Matches theme requirements
+          bundler-cache: true
+
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies 🔧
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip install nbconvert
+          bundle install
+
+      - name: Build with Jekyll 🏗️
+        env:
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          PASSWORD_HASH: ${{ secrets.PASSWORD_HASH }}
+        run: |
+          export JEKYLL_ENV=production
+          echo "firebase_api_key: $FIREBASE_API_KEY" >> _config_secrets.yml
+          echo "password_hash: $PASSWORD_HASH" >> _config_secrets.yml
+          bundle exec jekyll build --config _config.yml,_config_secrets.yml
+
+      - name: Upload artifact 📤
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
