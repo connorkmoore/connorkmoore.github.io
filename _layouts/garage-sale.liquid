@@ -32,7 +32,7 @@ layout: garage-sale-no-header
           <div class="item-details">
             <h3 class="item-title">{{ item.title }}</h3>
             <p class="item-description">{{ item.description }}</p>
-            <p class="item-price">${{ item.price }}</p>
+            <p class="item-price">{% if item.price == item.price | plus: 0 %}${% endif %}{{ item.price }}</p>
             
             {% if item.reserved_by %}
               <p class="item-reserved-note">Reserved by: {{ item.reserved_by }}</p>
@@ -68,39 +68,103 @@ layout: garage-sale-no-header
   {% endif %}
 </div>
 
-<script>
-  // Simple localStorage-based system for comments and reservations
-  const STORAGE_KEY = 'garage_sale_data';
-  
-  // Load data from localStorage
-  function loadData() {
-    const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : { items: {}, comments: {} };
-  }
-  
-  // Save data to localStorage
-  function saveData(data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  }
-  
-  // Initialize data on page load
-  function initializeData() {
-    const data = loadData();
-    
-    // Load comments for each item
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+  import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, query, where, getDocs, updateDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "{{ site.firebase_api_key }}",
+    authDomain: "connorcontent.firebaseapp.com",
+    projectId: "connorcontent",
+    storageBucket: "connorcontent.firebasestorage.app",
+    messagingSenderId: "788320571256",
+    appId: "1:788320571256:web:045d2a5e811fb9856e028d"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const commentsCollection = collection(db, 'garage_sale_comments');
+  const reservationsCollection = collection(db, 'garage_sale_reservations');
+
+  // Make functions globally available
+  window.firebaseLoaded = true;
+  window.db = db;
+  window.commentsCollection = commentsCollection;
+  window.reservationsCollection = reservationsCollection;
+  window.addDoc = addDoc;
+  window.updateDoc = updateDoc;
+  window.doc = doc;
+  window.getDocs = getDocs;
+  window.query = query;
+  window.where = where;
+  window.setDoc = setDoc;
+
+  // Load comments and reservations on page load
+  function loadGarageSaleData() {
     {% for item in site.data.garage_sale_items.items %}
-      const comments{{ item.id }} = data.comments['{{ item.id }}'] || [];
-      const commentsList{{ item.id }} = document.getElementById('comments-{{ item.id }}');
-      if (commentsList{{ item.id }}) {
-        commentsList{{ item.id }}.innerHTML = comments{{ item.id }}
-          .map(c => `<div class="comment"><strong>${c.name}</strong>: ${c.text}</div>`)
-          .join('');
-      }
+      // Load comments for item {{ item.id }}
+      const commentsQuery{{ item.id }} = query(commentsCollection, where('itemId', '==', {{ item.id }}));
+      onSnapshot(commentsQuery{{ item.id }}, (snapshot) => {
+        const commentsList = document.getElementById('comments-{{ item.id }}');
+        if (commentsList) {
+          commentsList.innerHTML = '';
+          snapshot.forEach((docSnapshot) => {
+            const comment = docSnapshot.data();
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
+            commentsList.appendChild(commentDiv);
+          });
+        }
+      });
+
+      // Load reservation for item {{ item.id }}
+      const reservationQuery{{ item.id }} = query(reservationsCollection, where('itemId', '==', {{ item.id }}));
+      onSnapshot(reservationQuery{{ item.id }}, (snapshot) => {
+        const btn = document.querySelector(`button[onclick="handleReserve({{ item.id }}"]`);
+        const itemCard = document.getElementById('item-{{ item.id }}');
+        const detailsDiv = itemCard?.querySelector('.item-details');
+        
+        if (!snapshot.empty) {
+          const reservation = snapshot.docs[0].data();
+          // Update button
+          if (btn) {
+            btn.disabled = true;
+            btn.textContent = 'Reserved';
+            btn.classList.add('reserved');
+          }
+          // Add/update reserved note
+          let reservedNote = itemCard?.querySelector('.item-reserved-note');
+          if (!reservedNote && detailsDiv) {
+            reservedNote = document.createElement('p');
+            reservedNote.className = 'item-reserved-note';
+            detailsDiv.appendChild(reservedNote);
+          }
+          if (reservedNote) {
+            reservedNote.textContent = `Reserved by: ${reservation.reserved_by}`;
+          }
+        } else {
+          // No reservation, reset button
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'I want it';
+            btn.classList.remove('reserved');
+          }
+          // Remove reserved note
+          const reservedNote = itemCard?.querySelector('.item-reserved-note');
+          if (reservedNote) {
+            reservedNote.remove();
+          }
+        }
+      });
     {% endfor %}
   }
-  
+
   // Handle comment posting
-  function handleComment(itemId) {
+  window.handleComment = async function(itemId) {
     const nameInput = document.getElementById('name-' + itemId);
     const commentInput = document.getElementById('comment-' + itemId);
     const name = nameInput.value.trim();
@@ -111,73 +175,57 @@ layout: garage-sale-no-header
       return;
     }
     
-    const data = loadData();
-    if (!data.comments[itemId]) {
-      data.comments[itemId] = [];
+    try {
+      await addDoc(commentsCollection, {
+        itemId: itemId,
+        name: name,
+        text: text,
+        timestamp: new Date().toISOString()
+      });
+      
+      // Clear inputs
+      nameInput.value = '';
+      commentInput.value = '';
+    } catch (error) {
+      alert('Error posting comment: ' + error.message);
     }
-    
-    data.comments[itemId].push({
-      name: name,
-      text: text,
-      timestamp: new Date().toISOString()
-    });
-    
-    saveData(data);
-    
-    // Clear inputs
-    nameInput.value = '';
-    commentInput.value = '';
-    
-    // Reload comments display
-    const commentsList = document.getElementById('comments-' + itemId);
-    commentsList.innerHTML = data.comments[itemId]
-      .map(c => `<div class="comment"><strong>${c.name}</strong>: ${c.text}</div>`)
-      .join('');
   }
-  
+
   // Handle item reservation
-  function handleReserve(itemId, itemTitle) {
-    const data = loadData();
-    
-    if (!data.items[itemId]) {
-      data.items[itemId] = {};
-    }
-    
-    if (data.items[itemId].reserved) {
-      alert('This item has already been reserved!');
-      return;
-    }
-    
+  window.handleReserve = async function(itemId, itemTitle) {
     const name = prompt('Enter your name to reserve this item:');
     if (!name) return;
     
-    data.items[itemId].reserved = true;
-    data.items[itemId].reserved_by = name;
-    data.items[itemId].reserved_at = new Date().toISOString();
-    
-    saveData(data);
-    alert(`${itemTitle} has been reserved for ${name}!`);
-    
-    // Update button state
-    const btn = event.target;
-    btn.disabled = true;
-    btn.textContent = 'Reserved';
-    btn.classList.add('reserved');
-    
-    // Add reserved note
-    const itemCard = document.getElementById('item-' + itemId);
-    const reserved = itemCard.querySelector('.item-reserved-note');
-    if (!reserved) {
-      const detailsDiv = itemCard.querySelector('.item-details');
-      const reservedNote = document.createElement('p');
-      reservedNote.className = 'item-reserved-note';
-      reservedNote.textContent = `Reserved by: ${name}`;
-      detailsDiv.appendChild(reservedNote);
+    try {
+      // Check if already reserved
+      const reservationQuery = query(reservationsCollection, where('itemId', '==', itemId));
+      const existingReservations = await getDocs(reservationQuery);
+      
+      if (!existingReservations.empty) {
+        alert('This item has already been reserved!');
+        return;
+      }
+      
+      // Create reservation
+      await addDoc(reservationsCollection, {
+        itemId: itemId,
+        itemTitle: itemTitle,
+        reserved_by: name,
+        reserved_at: new Date().toISOString()
+      });
+      
+      alert(`${itemTitle} has been reserved for ${name}!`);
+    } catch (error) {
+      alert('Error reserving item: ' + error.message);
     }
   }
-  
+
   // Initialize on page load
-  document.addEventListener('DOMContentLoaded', initializeData);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGarageSaleData);
+  } else {
+    loadGarageSaleData();
+  }
 </script>
 
 <style>
