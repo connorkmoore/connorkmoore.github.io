@@ -1,0 +1,81 @@
+# Virtual Garage Sale Items
+items:
+  - id: 1
+    title: "Electronic Dart Board"
+    description: "Digital scoring and multiple game modes. Includes power adapter and a set of darts."
+    price: "Free"
+    image: "ElecticDartBoard.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 2
+    title: "Traditional Cork Dart Board"
+    description: "Classic self-healing cork board. Perfect for a garage or basement setup."
+    price: "Best Offer"
+    image: "CorkDartBoard.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 3
+    title: "ION Blockrocker Speaker"
+    description: "High-power portable Bluetooth speaker. Massive battery life and great for tailgates."
+    price: "Free"
+    image: "Blockrocker.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 4
+    title: "Fireworks Stash"
+    description: "4 year old fireworks. Gaurenteed anticipation and uncrertainity, non gaurentee they work"
+    price: "Free"
+    image: "Fireworks.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 5
+    title: "Electric Fireplace"
+    description: "Provides both heat and a cozy ambiance. Great for smaller rooms or patios."
+    price: "Best Offer"
+    image: "fireplace.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 6
+    title: "Full Golf Club Set"
+    description: "Complete set with bag. Great for anyone looking to start playing this spring."
+    price: "Free"
+    image: "GolfClubs.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 7
+    title: "Heavy-Duty Flamethrower"
+    description: "Propane-powered torch. Ideal for clearing weeds or just being the coolest neighbor."
+    price: "Best Offer"
+    image: "flametrhower.png"
+    status: "sold"
+    reserved_by: null
+
+  - id: 8
+    title: "Home Kegerator"
+    description: "The ultimate home bar addition. Includes tap tower and CO2 setup. Works perfectly."
+    price: "Best Offer"
+    image: "kegerator.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 9
+    title: "Self-Propelled Lawnmower"
+    description: "Reliable gas mower in great shape. Easy to start and handles thick grass well."
+    price: "Best Offer"
+    image: "mower.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 10
+    title: "High-Voltage Bug Zapper"
+    description: "Keep the Iowa mosquitoes away. Heavy-duty construction with a very satisfying 'zap'."
+    price: "Free"
+    image: "zapper.png"
+    status: "available"
+    reserved_by: null

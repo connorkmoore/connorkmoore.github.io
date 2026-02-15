@@ -3,7 +3,7 @@
 
 <!-- Password Protection -->
 <script>
-  if (window.location.pathname !== '/password/' && window.location.pathname !== '/password') {
+  if (window.location.pathname !== '/password/' && window.location.pathname !== '/password' && window.location.pathname !== '/garage-sale' && window.location.pathname !== '/garage-sale/') {
     if (!sessionStorage.getItem('siteAccess')) {
       sessionStorage.setItem('redirectAfterLogin', window.location.pathname);
       window.location.href = '/password/';
