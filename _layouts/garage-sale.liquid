@@ -52,7 +52,6 @@ layout: garage-sale-no-header
               <!-- Comments will be loaded here -->
             </div>
             <div class="comment-form">
-              <input type="text" class="comment-input" placeholder="Your name" id="name-{{ item.id }}">
               <textarea class="comment-input" placeholder="Your comment..." id="comment-{{ item.id }}" rows="2"></textarea>
               <button class="btn-comment" onclick="handleComment({{ item.id }})">Post Comment</button>
             </div>
@@ -114,7 +113,7 @@ layout: garage-sale-no-header
             const comment = docSnapshot.data();
             const commentDiv = document.createElement('div');
             commentDiv.className = 'comment';
-            commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
+            commentDiv.innerHTML = `${comment.text}`;
             commentsList.appendChild(commentDiv);
           });
         }
@@ -164,26 +163,22 @@ layout: garage-sale-no-header
 
   // Handle comment posting
   window.handleComment = async function(itemId) {
-    const nameInput = document.getElementById('name-' + itemId);
     const commentInput = document.getElementById('comment-' + itemId);
-    const name = nameInput.value.trim();
     const text = commentInput.value.trim();
     
-    if (!name || !text) {
-      alert('Please enter your name and comment');
+    if (!text) {
+      alert('Please enter a comment');
       return;
     }
     
     try {
       await addDoc(commentsCollection, {
         itemId: itemId,
-        name: name,
         text: text,
         timestamp: new Date().toISOString()
       });
       
-      // Clear inputs
-      nameInput.value = '';
+      // Clear input
       commentInput.value = '';
     } catch (error) {
       alert('Error posting comment: ' + error.message);
@@ -412,18 +407,18 @@ layout: garage-sale-no-header
   
   .btn-comment {
     padding: 0.5rem;
-    background-color: var(--accent-color, #0066cc);
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: var(--accent-color, #0066cc);
+    border: 1px solid var(--border-color, #e0e0e0);
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
   }
   
   .btn-comment:hover {
-    background-color: #0052a3;
+    background-color: var(--border-color, #e0e0e0);
   }
   
   /* Dark mode support */
@@ -443,6 +438,11 @@ layout: garage-sale-no-header
     
     .item-description {
       color: #999;
+    }
+
+    .item-comments-section {
+      background-color: #111;
+      border-top-color: #333;
     }
     
     .comments-list,

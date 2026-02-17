@@ -81,7 +81,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 11
+  - id: 11
     title: "Chairs"
     description: "This arent mine but I have them. Look cool."
     price: "Free"
@@ -89,7 +89,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 12
+  - id: 12
     title: "Crutches"
     description: "Good pick me up. No longer needed for now."
     price: "Free"
@@ -97,7 +97,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 13
+  - id: 13
     title: "Fish Tank"
     description: "Tank to store a fun pet. Includes filter and spongbob house"
     price: "Free"
@@ -105,7 +105,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 14
+  - id: 14
     title: "Grabber"
     description: "Get those things in hard to reach places"
     price: "Free"
@@ -113,7 +113,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 15
+  - id: 15
     title: "Reading Material"
     description: "Books and magazines for reading pleasure."
     price: "Free"
@@ -121,7 +121,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 16
+  - id: 16
     title: "Pump"
     description: "Hove water good."
     price: "Free"
@@ -129,7 +129,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 17
+  - id: 17
     title: "Max'd Out Scooter"
     description: "High-power tricked out knee scooter. No longer needed for now"
     price: "Free"
@@ -137,7 +137,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 18
+  - id: 18
     title: "Bike Shoes"
     description: "Comfortable and stylish bike shoes. Never used. Has cleat mounts"
     price: "Free"
@@ -145,7 +145,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 19
+  - id: 19
     title: "Snowboards"
     description: "3 snowboards, travel bag and bindings. proven shredable"
     price: "Free"
@@ -153,7 +153,7 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 20
+  - id: 20
     title: "Beer Pong Table"
     description: "Retro, foldable beer pong table. Has been used"
     price: "Free"
@@ -161,10 +161,18 @@ items:
     status: "available"
     reserved_by: null
 
-    id: 21
+  - id: 21
     title: "USA Shoes"
     description: "Sick shoes, Go America"
     price: "Free"
     image: "USAshoes.jpg"
+    status: "available"
+    reserved_by: null
+
+  - id: 22
+    title: "Fire Pit"
+    description: "Metal fire pit for outdoor use. "
+    price: "Best Offer"
+    image: "fire.png"
     status: "available"
     reserved_by: null
