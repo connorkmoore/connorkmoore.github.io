@@ -32,7 +32,6 @@ layout: garage-sale-no-header
           <div class="item-details">
             <h3 class="item-title">{{ item.title }}</h3>
             <p class="item-description">{{ item.description }}</p>
-            <p class="item-price">{% if item.price == item.price | plus: 0 %}${% endif %}{{ item.price }}</p>
             
             {% if item.reserved_by %}
               <p class="item-reserved-note">Reserved by: {{ item.reserved_by }}</p>

@@ -1,62 +1,39 @@
 # Virtual Garage Sale Items
 items:
+
   - id: 1
-    title: "Electronic Dart Board"
-    description: "Digital scoring and multiple game modes. Includes power adapter and a set of darts."
-    price: "Free"
-    image: "ElecticDartBoard.png"
-    status: "available"
+    title: "Flamethrower"
+    description: "Propane-powered Flamethrower"
+    price: "Best Offer"
+    image: "flametrhower.png"
+    status: "sold"
     reserved_by: null
 
   - id: 2
-    title: "Traditional Cork Dart Board"
-    description: "Classic self-healing cork board. Perfect for a garage or basement setup."
-    price: "Best Offer"
-    image: "CorkDartBoard.png"
-    status: "available"
-    reserved_by: null
-
-  - id: 3
-    title: "ION Blockrocker Speaker"
-    description: "High-power portable Bluetooth speaker. Massive battery life and great for tailgates."
-    price: "Free"
-    image: "Blockrocker.png"
-    status: "available"
-    reserved_by: null
-
-  - id: 4
-    title: "Fireworks Stash"
+    title: "Fireworks"
     description: "4 year old fireworks. Gaurenteed anticipation and uncrertainity, non gaurentee they work"
     price: "Free"
     image: "Fireworks.png"
     status: "available"
     reserved_by: null
 
-  - id: 5
+  - id: 3
     title: "Electric Fireplace"
-    description: "Provides both heat and a cozy ambiance. Great for smaller rooms or patios."
+    description: "Electric fireplace with remote control. Provide good heat and looks kind cool"
     price: "Best Offer"
     image: "fireplace.png"
     status: "available"
     reserved_by: null
 
-  - id: 6
+  - id: 4
     title: "Full Golf Club Set"
-    description: "Complete set with bag. Great for anyone looking to start playing this spring."
+    description: "Complete set with bag with golf balls. Works. Good starter bag."
     price: "Free"
     image: "GolfClubs.png"
     status: "available"
     reserved_by: null
 
-  - id: 7
-    title: "Heavy-Duty Flamethrower"
-    description: "Propane-powered torch. Ideal for clearing weeds or just being the coolest neighbor."
-    price: "Best Offer"
-    image: "flametrhower.png"
-    status: "sold"
-    reserved_by: null
-
-  - id: 8
+  - id: 5
     title: "Home Kegerator"
     description: "The ultimate home bar addition. Includes tap tower and CO2 setup. Works perfectly."
     price: "Best Offer"
@@ -64,18 +41,130 @@ items:
     status: "available"
     reserved_by: null
 
-  - id: 9
+  - id: 6
     title: "Self-Propelled Lawnmower"
-    description: "Reliable gas mower in great shape. Easy to start and handles thick grass well."
+    description: "Reliable gasless mower in great shape. "
     price: "Best Offer"
     image: "mower.png"
     status: "available"
     reserved_by: null
 
-  - id: 10
-    title: "High-Voltage Bug Zapper"
-    description: "Keep the Iowa mosquitoes away. Heavy-duty construction with a very satisfying 'zap'."
+  - id: 7
+    title: "Bug Zapper"
+    description: "Keep the Iowa mosquitoes away or prank your friends. "
     price: "Free"
     image: "zapper.png"
+    status: "available"
+    reserved_by: null
+  - 
+    id: 8
+    title: "Electronic Dart Board"
+    description: "Digital scoring and multiple game modes. Includes set of darts."
+    price: "Free"
+    image: "ElecticDartBoard.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 9
+    title: "Traditional Cork Dart Board"
+    description: "Classic self-healing cork board. Perfect for a garage or basement setup."
+    price: "Best Offer"
+    image: "CorkDartBoard.png"
+    status: "available"
+    reserved_by: null
+
+  - id: 10
+    title: "Blower"
+    description: "Realy good at blowing. New carb. Runs well"
+    price: "Free"
+    image: "Blower.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 11
+    title: "Chairs"
+    description: "This arent mine but I have them. Look cool."
+    price: "Free"
+    image: "chairs.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 12
+    title: "Crutches"
+    description: "Good pick me up. No longer needed for now."
+    price: "Free"
+    image: "crutches.png"
+    status: "available"
+    reserved_by: null
+
+    id: 13
+    title: "Fish Tank"
+    description: "Tank to store a fun pet. Includes filter and spongbob house"
+    price: "Free"
+    image: "fishtank.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 14
+    title: "Grabber"
+    description: "Get those things in hard to reach places"
+    price: "Free"
+    image: "grabber.png"
+    status: "available"
+    reserved_by: null
+
+    id: 15
+    title: "Reading Material"
+    description: "Books and magazines for reading pleasure."
+    price: "Free"
+    image: "magazine.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 16
+    title: "Pump"
+    description: "Hove water good."
+    price: "Free"
+    image: "pump.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 17
+    title: "Max'd Out Scooter"
+    description: "High-power tricked out knee scooter. No longer needed for now"
+    price: "Free"
+    image: "scooter.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 18
+    title: "Bike Shoes"
+    description: "Comfortable and stylish bike shoes. Never used. Has cleat mounts"
+    price: "Free"
+    image: "shoes.png"
+    status: "available"
+    reserved_by: null
+
+    id: 19
+    title: "Snowboards"
+    description: "3 snowboards, travel bag and bindings. proven shredable"
+    price: "Free"
+    image: "snowboard.jpg"
+    status: "available"
+    reserved_by: null
+
+    id: 20
+    title: "Beer Pong Table"
+    description: "Retro, foldable beer pong table. Has been used"
+    price: "Free"
+    image: "table.png"
+    status: "available"
+    reserved_by: null
+
+    id: 21
+    title: "USA Shoes"
+    description: "Sick shoes, Go America"
+    price: "Free"
+    image: "USAshoes.jpg"
     status: "available"
     reserved_by: null
