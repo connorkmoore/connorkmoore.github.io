@@ -11,14 +11,14 @@
   {% endif %}
 {% endcapture %}
 
-{% if site.footer_fixed %}
+{% if site.footer_fixed and page.layout != "garage-sale" %}
   <footer class="fixed-bottom" role="contentinfo">
     <div class="container mt-0">
       {{ footer_contents }}
     </div>
   </footer>
 {% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
+  <footer role="contentinfo" {% if page.layout == "garage-sale" %}id="scroll-reveal-footer"{% endif %}>
     {% if site.newsletter.enabled %}
       {% include newsletter.liquid %}
     {% endif %}
@@ -27,4 +27,29 @@
       {{ footer_contents }}
     </div>
   </footer>
+{% endif %}
+
+{% if page.layout == "garage-sale" %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const footer = document.getElementById("scroll-reveal-footer");
+      if (!footer) return;
+      
+      // Hide footer initially
+      footer.style.display = "none";
+      
+      window.addEventListener("scroll", function() {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const pageHeight = document.documentElement.scrollHeight;
+        const distanceFromBottom = pageHeight - scrollPosition;
+        
+        // Show footer when within 200px of bottom
+        if (distanceFromBottom < 200) {
+          footer.style.display = "block";
+        } else {
+          footer.style.display = "none";
+        }
+      });
+    });
+  </script>
 {% endif %}

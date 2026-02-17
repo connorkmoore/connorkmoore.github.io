@@ -77,7 +77,7 @@ items:
     title: "Blower"
     description: "Realy good at blowing. New carb. Runs well"
     price: "Free"
-    image: "Blower.jpg"
+    image: "blower.jpg"
     status: "available"
     reserved_by: null
 
