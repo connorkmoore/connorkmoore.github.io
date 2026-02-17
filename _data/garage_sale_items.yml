@@ -176,3 +176,11 @@ items:
     image: "fire.png"
     status: "available"
     reserved_by: null
+
+  - id: 23
+    title: "Bench"
+    description: "Get yuge with this set. Bench with dumbell"
+    price: "Best Offer"
+    image: "bench.png"
+    status: "available"
+    reserved_by: null    
