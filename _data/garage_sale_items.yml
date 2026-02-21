@@ -14,7 +14,7 @@ items:
     description: "4 year old fireworks. Gaurenteed anticipation and uncrertainity, non gaurentee they work"
     price: "Free"
     image: "Fireworks.png"
-    status: "available"
+    status: "sold"
     reserved_by: null
 
   - id: 3
@@ -54,7 +54,7 @@ items:
     description: "Keep the Iowa mosquitoes away or prank your friends. "
     price: "Free"
     image: "zapper.png"
-    status: "available"
+    status: "sold"
     reserved_by: null
   - 
     id: 8
@@ -86,7 +86,7 @@ items:
     description: "This arent mine but I have them. Look cool."
     price: "Free"
     image: "chairs.jpg"
-    status: "available"
+    status: "sold"
     reserved_by: null
 
   - id: 12
@@ -94,7 +94,7 @@ items:
     description: "Good pick me up. No longer needed for now."
     price: "Free"
     image: "crutches.png"
-    status: "available"
+    status: "sold"
     reserved_by: null
 
   - id: 13
@@ -110,7 +110,7 @@ items:
     description: "Get those things in hard to reach places"
     price: "Free"
     image: "grabber.png"
-    status: "available"
+    status: "sold"
     reserved_by: null
 
   - id: 15
